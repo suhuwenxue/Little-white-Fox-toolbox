@@ -1,0 +1,48 @@
+[package]
+name = "little-white-fox-toolbox"
+version = "0.0.0-beta.0"
+description = "小白狐的工具杂烩 | Little white Fox's tool hodgepodge"
+authors = ["github@suhuwenxue  xiehuqiqi"]
+license = "MIT License"
+repository = "http://github.com/suhuwenxue/Little-white-Fox-toolbox"
+edition = "2021"
+rust-version = "1.77.2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "little_white_fox_toolboxlib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.1", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.0.3", features = [ "tray-icon" ] }
+tauri-plugin-log = "2.0.0-rc"
+tauri-plugin-websocket = "2"
+tauri-plugin-upload = "2"
+tauri-plugin-os = "2"
+tauri-plugin-notification = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-clipboard-manager = "2.0.1"
+
+
+[profile.dev]
+incremental = true # Compile your binary in smaller steps.
+
+[profile.release]
+codegen-units = 1 # Allows LLVM to perform better optimization.
+lto = true # Enables link-time-optimizations.
+opt-level = "s" # Prioritizes small binary size. Use `3` if you prefer speed.
+panic = "abort" # Higher performance by disabling panic handlers.
+strip = true # Ensures debug symbols are removed.
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-autostart = "2"
+tauri-plugin-updater = "2"
+tauri-plugin-window-state = "2"
+
