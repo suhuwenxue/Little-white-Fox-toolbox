@@ -19,7 +19,9 @@
     "tb": "tauri build",
     "ta": "tauri android",
     "tad": "tauri android dev",
-    "tab": "tauri android build"
+    "tab": "tauri android build",
+    "updater": "node scripts/updater.mjs",
+    "publish": "node scripts/publish.mjs"
   },
   "dependencies": {
     "@tauri-apps/plugin-autostart": "~2",
@@ -54,6 +56,7 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@actions/github": "^6.0.0",
     "@tauri-apps/cli": "^2.0.3",
     "@tsconfig/node20": "^20.1.4",
     "@types/jsdom": "^21.1.7",
@@ -69,8 +72,10 @@
     "eslint": "^9.12.0",
     "eslint-plugin-cypress": "^4.0.0",
     "eslint-plugin-vue": "^9.29.0",
+    "fs-extra": "^11.2.0",
     "jsdom": "^25.0.1",
     "naive-ui": "^2.40.1",
+    "node-fetch": "^3.3.2",
     "npm-run-all2": "^6.2.3",
     "prettier": "^3.3.3",
     "start-server-and-test": "^2.0.8",

@@ -47,7 +47,7 @@ jobs:
         with:
           workspaces: './src-tauri -> target'
 
-      - name: rustup target 
+      - name: rustup target
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           rustup target add x86_64-pc-windows-msvc
