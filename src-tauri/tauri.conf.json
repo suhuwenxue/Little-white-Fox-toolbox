@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "little-white-fox-toolbox",
-  "version": "Cargo.toml",
+  "version": "0.0.1",
   "identifier": "wen.suhuwenxue.tauriapp.little-white-fox-toolbox",
   "mainBinaryName": "little-white-fox-toolbox",
   "build": {
