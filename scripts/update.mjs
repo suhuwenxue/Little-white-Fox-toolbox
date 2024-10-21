@@ -14,7 +14,7 @@ const updateRelease = async () => {
   });
   // 删除旧的的文件
   const deletePromises = release.assets
-    .filter((item) => item.name === "update.json")
+    .filter((item) => item.name === "latest.json")
     .map(async (item) => {
       await octokit.rest.repos.deleteReleaseAsset({
         owner: context.repo.owner,
@@ -26,13 +26,13 @@ const updateRelease = async () => {
   await Promise.all(deletePromises);
 
   // 上传新的文件
-  const file = await readFile("update.json", { encoding: "utf-8" });
+  const file = await readFile("latest.json", { encoding: "utf-8" });
 
   await octokit.rest.repos.uploadReleaseAsset({
     owner: context.repo.owner,
     repo: context.repo.repo,
     release_id: release.id,
-    name: "update.json",
+    name: "latest.json",
     data: file,
   });
 };
