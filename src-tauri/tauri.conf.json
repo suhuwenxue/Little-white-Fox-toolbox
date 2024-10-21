@@ -195,11 +195,6 @@
         "installMode": "both",
         "sidebarImage": "assets/sidebarImage.bmp",
         "languages": ["English", "TradChinese", "SimpChinese", "Japanese"]
-      },
-      "wix": {
-        "bannerPath": "assets/bannerPath.bmp",
-        "dialogImagePath": "assets/dialogImagesPath.bmp",
-        "language": "zh-CN"
       }
     }
   },
