@@ -82,11 +82,15 @@ jobs:
       - name: Install frontend dependencies
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
         run: pnpm install --no-frozen-lockfile # Change this to npm, yarn or pnpm.
- 
+
       - uses: tauri-apps/tauri-action@v0
         name: Build the app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 使用之前配置的私钥
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          # 使用之前配置的私钥密码
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           tauriScript: pnpm tauri
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
@@ -97,3 +101,9 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
+
+      - name: Upload assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # 运行自己的脚本
+        run: node scripts/updater.mjs

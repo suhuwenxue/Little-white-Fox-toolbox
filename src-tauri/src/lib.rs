@@ -12,16 +12,15 @@
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_process::init())
         //  插件  日志  为您的 Tauri 应用程序配置日志记录。
         //  https://tauri.app/plugin/logging/
         //  windows macOS linux
         .plugin(tauri_plugin_log::Builder::new().build())
-        
         //  插件  自动启动  在系统启动时自动启动应用程序。
         //  https://tauri.app/plugin/autostart/
         //  windows macOS linux
         //.plugin(tauri_plugin_autostart::init(/* MacosLauncher */ /* Option<Vec<&'static str>> */))
-
         //  插件  剪贴板  使用 clipboard 插件读取和写入系统剪贴板。
         //  https://tauri.app/plugin/clipboard/
         //  windows macOS linux android ios

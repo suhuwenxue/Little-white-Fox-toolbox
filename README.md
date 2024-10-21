@@ -59,3 +59,13 @@ pnpm test:e2e
 ```sh
 pnpm lint
 ```
+
+
+
+更新流程
+1.完成新版本程序编写并提交
+2.向 UPDATELOG.md 中添加新版本描述
+3.执行 pnpm run publish, 发布新版本，由于提交信息中带有版本 tag，触发 Release CI
+4.编译完成，repo release 中出现新版本的 draft，根据需要修改相关信息并发布
+5.发布完成自动触发 Updater CI，更新 updater release 中的 update.json
+6.程序此时可以给通过访问 github release 中的 update.json 获得新版本更新信息并实现自动更新
