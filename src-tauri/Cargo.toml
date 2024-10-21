@@ -1,6 +1,6 @@
 [package]
 name = "little-white-fox-toolbox"
-version = "0.0.0-beta.0"
+version = "0.0.0.1"
 description = "小白狐的工具杂烩 | Little white Fox's tool hodgepodge"
 authors = ["github@suhuwenxue  xiehuqiqi"]
 license = "MIT License"
