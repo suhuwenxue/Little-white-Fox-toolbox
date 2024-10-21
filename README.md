@@ -1,8 +1,8 @@
-# Time-literature-club
+# Little-white-fox-toolbox
 
-This template should help get you started developing with Vue 3 in Vite.
+一个普普通通的工具箱类桌面程序  |   An ordinary toolbox class desktop program
 
-## Recommended IDE Setup
+## Recommended IDE Setup   |  推荐的IDE设置
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
@@ -23,13 +23,15 @@ pnpm install
 ### Compile and Hot-Reload for Development
 
 ```sh
-pnpm dev
+pnpm dev   // 前端
+pnpm tauri dev   // tauri app
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-pnpm build
+pnpm build  
+pnpm tauri build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
@@ -59,13 +61,3 @@ pnpm test:e2e
 ```sh
 pnpm lint
 ```
-
-
-
-更新流程
-1.完成新版本程序编写并提交
-2.向 UPDATELOG.md 中添加新版本描述
-3.执行 pnpm run publish, 发布新版本，由于提交信息中带有版本 tag，触发 Release CI
-4.编译完成，repo release 中出现新版本的 draft，根据需要修改相关信息并发布
-5.发布完成自动触发 Updater CI，更新 updater release 中的 update.json
-6.程序此时可以给通过访问 github release 中的 update.json 获得新版本更新信息并实现自动更新

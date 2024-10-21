@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "little-white-fox-toolbox",
-  "version": "../package.json",
+  "version": "Cargo.toml",
   "identifier": "wen.suhuwenxue.tauriapp.little-white-fox-toolbox",
   "mainBinaryName": "little-white-fox-toolbox",
   "build": {
@@ -233,6 +233,7 @@
       },
 	    "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ4NEFBRUZBQTU0M0ZEODYKUldTRy9VT2wrcTVLMkxWVktSU0tPYnBYaXNKZ1JkZWlEMjE0OHJYV3RGLzR1YjhLeHFKUHNMM04K",
 	      "endpoints": [
+          "https://github.com/suhuwenxue/Little-white-Fox-toolbox/releases/download/latest/latest.json",
 	        "https://github.com/suhuwenxue/Little-white-Fox-toolbox/releases/download/updater/update.json"
 	    ]
     }
